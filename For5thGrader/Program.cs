@@ -9,13 +9,56 @@ namespace For5thGrader
         //1task
         enum Alphabet
         {
-            A = 10, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, //26 Convertfromanyto10 работа с енамом
+            A = 10, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, //26 C
             a, b, c, d, e, f, g, h, i, j, k, l, m, n //14
         }
 
         public static string Result;
+        
+        static int CheckEnum(char num)
+        {
+            string trueNum = "";
+            for (short i = 10; i <= 50; i++)
+            {
+                if (num.ToString() == Convert.ToString((Alphabet)i))
+                    trueNum = i.ToString();
+                else if (!int.TryParse(num.ToString(), out int e))
+                    return 0;
+            }
+            return Convert.ToInt32(trueNum);
+        }
 
-        public static void ConvertFrom10ToAny(int num, int numSystem)
+        static bool CheckNum(string num, string numSystem)
+        {
+            bool check = false;
+            var list = new List<int>{ };
+            for (int i = 0; i < num.Length; i++)
+            {
+                if (((num[i] >= 65) && (num[i] <= 90)) || ((num[i] >= 97) && (num[i] <= 110)))
+                {
+                    list.Add(CheckEnum(num[i]));
+                    continue;
+                }
+                list.Add(num[i]);
+            }
+
+            foreach (var n in list)
+            {
+                if (n >= int.Parse(numSystem))
+                    return false;
+                else
+                    check = true;
+            }
+
+            foreach (var m in list)
+            {
+                Console.Write(m);
+            }
+
+            return check;
+        }
+
+        static int ConvertFrom10ToAny(int num, int numSystem)
         {
             if (num >= numSystem) ConvertFrom10ToAny(num / numSystem, numSystem);
             var number = num % numSystem;
@@ -31,101 +74,56 @@ namespace For5thGrader
             }
             Console.WriteLine("Промежуточный результат:                         " + number);
             Console.WriteLine($"{num} / {numSystem} = {num / numSystem} и {num % numSystem}(остаток)");
-        }
-        /*static double ConvertFromAnyTo10(string num, string numSystem)
-        {
-            Console.WriteLine("\n" + num);
-            for (int i = num.Length - 1; i >= 0; i--)
-                Console.Write(i);
-            Console.WriteLine(" - степени\n");
             
-            var result = 0.0;
-            for (int i = 0, j = 1; i < num.Length; i++, j++)
+            return int.Parse(Result);
+        }
+        static int ConvertFromAnyTo10(List<int> num1, int numSystem1)
+        {
+            string num = "";
+            foreach (var n in num1)
             {
-                double number;
-                if ((num[i] >= 65) && (num[i] <= 90))
-                {
-                    number = Alphabet
-                }
-                else if (num[i] >= 97) && (num[i] <= 110))
-                {
-                    
-                }
-                else if (num[i])
-                {
-                    number = (double.Parse(num[i].ToString()) * Math.Pow(Convert.ToDouble(numSystem), num.Length - j));
-                }
-
-                result += number;
-                Console.Write("+ " + number);
-                Console.WriteLine($"     ({num[i]}*{numSystem}^{num.Length - j})");
+                num += n;
             }
+            var numSystem = numSystem1.ToString();
+            
+            Console.SetCursorPosition(80, 3);
+            Console.WriteLine(num);
+            Console.SetCursorPosition(80, 4);
+            for (int i = num.Length - 1; i >= 0; i--)
+            {
+                Console.Write(i);
+            }
+            Console.WriteLine();
 
-            Console.WriteLine($"Число {num} в {numSystem} СС = {result} в 10 СС\n");
-            return result;
+            var res = 0;
+
+            for (int i = num.Length - 1, n = 0; i >= 0; i--, n++)
+            {
+                res += num1[n] * Convert.ToInt32(Math.Pow(numSystem1, i));
+            }
+            Console.WriteLine(res);
+            return res;
         }
         static void ConvertFromOneToAnother()
         {
-            Console.WriteLine("Алфавит: 0, 1, 2, 3, 4, 5, 6, 7, 8, 9, " + 
-                              "A, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z, " + 
-                              "a, b, c, d, e, f, g, h, i, j, k, l, m, n"); 
-            Console.Write("Введите число: ");
-            var num = Console.ReadLine();
-            //CheckNum(num);
-            
-            Console.Write("Введите начальную систему счисления(1-50): ");
-            var numSys1 = Console.ReadLine();
-            //CheckNum(numSys1);
-
-            bool check = false;
-
-            foreach (var el in num)
+            var x = Console.ReadLine();
+            var listx = new List<int> { };
+            foreach (var ch in x)
             {
-                if ((el >= 65) && (el <= 90))
+                if (((ch >= 'A') && (ch <= 'Z')) || ((ch >= 'a') && (ch <= 'n')))
                 {
-                    if ((el - 55) >= int.Parse(numSys1))
-                        check = false;
-                    else
-                        check = true;
+                    listx.Add(CheckEnum(ch));
                 }
-                else if ((el >= 97) && (el <= 110))
-                {
-                    if ((el - 60) >= int.Parse(numSys1))
-                        check = false;
-                    else
-                        check = true;                
-                }
-                else
-                {
-                    if ((el - '0') >= int.Parse(numSys1))
-                        check = false;
-                    else
-                        check = true;
-                }
+                else 
+                    listx.Add(Convert.ToInt32(ch));
             }
-            
-            if (check)
-            {
-                Console.Write("Введите желаемую систему счисления(1-50): ");
-                var numSys2 = Console.ReadLine();
-                //CheckNum(numSys2);
+            var y = Convert.ToInt32(Console.ReadLine());
+            var z = Convert.ToInt32(Console.ReadLine());
 
-                Console.ForegroundColor = ConsoleColor.Green;
-                Console.WriteLine("1)Для перевода из одной системы счисления в другую нужно перевести число сначала в десятичную систему, а затем в нужную");
-                Console.WriteLine($"{num} в {numSys1} СС переводится в 10 СС путем представления в виде суммы степеней {numSys1} с коэффициентами-цифрами");
-                Console.WriteLine("2)Для перевода числа из 10 СС в другой СС, нужно столбиком делить это число на основание СС," 
-                                  + " а затем записать остатки от деления в обратной последовательности\n" 
-                                  + "Читать снизу вверх (а остатки собираются сверху вниз)");
-                Console.ResetColor();
-                
-                ConvertFrom10ToAny(Convert.ToInt32(ConvertFromAnyTo10(num, numSys1)), Convert.ToInt32(numSys2));
-                Console.WriteLine("\nРезультат: " + Result);
-            }
-            else
-            {
-                Console.WriteLine("Система счисления меньше, чем указанные в числе символы!");
-            }
-        }*/
+            var newNum = ConvertFromAnyTo10(listx, y);
+            var res = ConvertFrom10ToAny(newNum, z);
+            Console.WriteLine(res);
+        }
 
         //2task
         static void ConvertToRome()
@@ -290,6 +288,65 @@ namespace For5thGrader
                 Console.Write(str);
             }
         } 
+        
+        //3task
+        static List<int> ConvertFractionalPart(int drobpart, int numSystem)
+        {
+            var str = "0," + drobpart;
+            double drob = double.Parse(str);
+            var result = new List<int> { };
+            var c = 0;
+            var x = str.Split(',');
+
+            do
+            {
+                c++;
+
+                Console.WriteLine("while");
+                drob *= numSystem;
+                Console.WriteLine("    " + drob);
+                
+                var s = drob.ToString();
+                var d = s.Split(',');
+               
+                if (string.IsNullOrWhiteSpace(d[1]))
+                    drobpart = int.Parse(d[1]);
+
+                if (drob > 1)
+                {
+                    result.Add(Convert.ToInt32(drob));
+                    Console.WriteLine("iF " + drob + " " + drobpart);
+                    drob -= Convert.ToInt32(drob);
+                }
+                
+            } while ((c <= 8) || (!string.IsNullOrWhiteSpace(x[1])));
+            
+            return result;
+        }
+        static void ConvertRealNumbers()
+        {
+            Console.WriteLine("Введите число в 10-СС с точкой");
+            var input = Console.ReadLine();
+            var c = input.Split('.');
+            var mainNum = int.Parse(c[0]);
+            var subNum = int.Parse(c[1]);
+            
+            Console.WriteLine("Введите желаемую СС:");
+            var numSystem = Convert.ToInt32(Console.ReadLine());
+            
+            Console.WriteLine("Сначала переводим целую часть:");
+            var main = ConvertFrom10ToAny(mainNum, numSystem);
+            
+            Console.WriteLine("Теперь переводим дробную часть:");
+            var sub = ConvertFractionalPart(subNum, numSystem);
+            
+            Console.WriteLine(main);
+            foreach (var ch in sub)
+            {
+                Console.Write(ch);
+            }
+            
+        }
         public static void Main(string[] args)
         {
             Console.WriteLine("Выберите, что вам нужно: " +
@@ -299,13 +356,13 @@ namespace For5thGrader
                               "\n4) Процесс сложения/вычитания в произвольной системе счисления" +
                               "\n5) Процесс умножения в произвольных системах счисления");
             var option = Console.ReadLine();
-            //if (option == "1")
-                //ConvertFromOneToAnother();
-            if (option == "2")
+            if (option == "1")
+                ConvertFromOneToAnother();
+            else if (option == "2")
                 ConvertToRome();
-            /*else if (option == "3")
+            else if (option == "3")
                 ConvertRealNumbers();
-            else if (option == "4")
+            /*else if (option == "4")
                 StackOrFind();
             else if (option == "5")
                 ToIncrease();*/
