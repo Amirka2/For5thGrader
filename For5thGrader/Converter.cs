@@ -30,18 +30,6 @@ namespace For5thGrader
 
             return listNum;
         }
-        
-        public static List<int> AddZeros(List<int> list, int count)
-        {
-            list.Reverse();
-            for (int i = 0; i < count; i++)
-            {
-                list.Add(0);
-            }
-
-            list.Reverse();
-            return list;
-        }
 
         public static void FromAnyToAny()
         {
@@ -129,9 +117,9 @@ namespace For5thGrader
             Console.WriteLine();
             
             return result;
-        }    // 1 Task
+        }            // 1 Task
 
-        static List<int> FractionalPart(int num, int numSystem)                // 3 Task
+        static List<int> FractionalPart(int num, int numSystem)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             string zero = "0,";
@@ -162,7 +150,7 @@ namespace For5thGrader
             Console.ResetColor();
 
             return result;
-        }
+        }                // 3 Task
         public static void RealNumber()
         {
             Console.Write("Введите число в десятичной системе счисления: ");
@@ -207,6 +195,6 @@ namespace For5thGrader
             {
                 Console.Write(el);
             }
-        }
+        }                                       // 3 Task
     }
 }
