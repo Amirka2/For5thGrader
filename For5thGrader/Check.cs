@@ -1,3 +1,5 @@
+using System;
+using System.Linq;
 using static System.Enum;
 using static System.Convert;
 
@@ -11,7 +13,7 @@ namespace For5thGrader
             a, b, c, d, e, f, g, h, i, j, k, l, m, n
         }
         
-        public static bool SS(string num, int numSys)
+        public static bool NumInSS(string num, int numSys)
         {
             var numList = Converter.ToNumList(num);
             foreach (var el in numList)
@@ -20,6 +22,17 @@ namespace For5thGrader
                     return false;
             }
 
+            return true;
+        }
+
+        public static bool SS(int numSystem)
+        {
+            if (numSystem > 50 || numSystem < 2)
+            {
+                Console.WriteLine("Система счисления не удовлетворяет условию (2-50)");
+                return false;
+            }            
+            
             return true;
         }
 
@@ -38,15 +51,14 @@ namespace For5thGrader
 
         }
 
-        public static bool Is10Number(string num)
+        public static bool IsRealNumber(string num)
         {
-            foreach (var el in num)
+            if (!double.TryParse(num, out double c) || (!num.Contains(',')))
             {
-                if (!char.IsNumber(el))
-                    return false;
+                Console.WriteLine("Число не соответствует типу с плавающей запятой!");
+                return true;
             }
-
-            return true;
+            return false;
         }
     }
 }

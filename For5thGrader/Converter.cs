@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 
 namespace For5thGrader
 {
@@ -59,7 +60,7 @@ namespace For5thGrader
                 Console.WriteLine("Ошибка ввода!");
                 FromAnyToAny();
             }
-            else if (!Check.SS(num, numSystem1) || !Check.Number(num))
+            else if (!Check.NumInSS(num, numSystem1) || !Check.Number(num))
             {
                 Console.WriteLine("Число не подходит данной системе счисления! \nВведите заново");
                 FromAnyToAny();
@@ -82,7 +83,7 @@ namespace For5thGrader
             Console.WriteLine("Для перевода из любой системы счисления в любую другую, нужно перевести число в десятичную систему, а потом из десятичной в нужную");
             
             int number = FromAnyTo10(num, numSystem1); 
-            var result = ConvertFrom10ToAny(number, numSystem2);
+            var result = From10ToAny(number, numSystem2);
         }                                    // 1 Task
 
         public static int FromAnyTo10(string num, int numSystem)
@@ -104,7 +105,7 @@ namespace For5thGrader
             return result;
         }             // 1 Task
         
-        public static List<int> ConvertFrom10ToAny(int num, int numSystem)
+        public static List<int> From10ToAny(int num, int numSystem)
         {
             var result = new List<int>{};
 
@@ -125,17 +126,87 @@ namespace For5thGrader
             {
                 Console.Write(el);
             }
+            Console.WriteLine();
             
             return result;
         }    // 1 Task
-        
+
+        static List<int> FractionalPart(int num, int numSystem)                // 3 Task
+        {
+            Console.ForegroundColor = ConsoleColor.Cyan;
+            string zero = "0,";
+            var strNum = Convert.ToString(num);
+            string strFract = string.Concat(zero, strNum);
+            var fract = Convert.ToDouble(strFract);
+            var result = new List<int> { };
+            var count = 0;
+
+            while ((fract != 0) || (count <= 8))
+            {
+                Console.WriteLine($"Умножаем число после запятой на основание системы: {fract} * {numSystem}");
+                fract *= numSystem;
+                Console.WriteLine($"Дробная часть: {fract}");
+
+                var res = Convert.ToString(fract).Split(',');
+                Console.WriteLine($"Записываем {res[0]}");
+                result.Add(Convert.ToInt32(res[0]));
+
+                if (fract >= 1)
+                {
+                    fract -= (int) fract;
+                }
+
+                count++;
+            }
+            
+            Console.ResetColor();
+
+            return result;
+        }
         public static void RealNumber()
         {
             Console.Write("Введите число в десятичной системе счисления: ");
             var num = Console.ReadLine();
-            while (!Check.Is10Number(num))
+            while (Check.IsRealNumber(num) || string.IsNullOrWhiteSpace(num))
                 num = Console.ReadLine();
             
+            Console.Write("Введите желаемую систему счисления: ");
+            var numSystem = Convert.ToInt32(Console.ReadLine());
+            while (!Check.SS(numSystem) || string.IsNullOrWhiteSpace(numSystem.ToString()))
+                numSystem = Convert.ToInt32(Console.ReadLine());
+
+            string[] numParts = num.Split(',', '.');
+
+            int beforeDot = 0, afterDot = 0;
+
+            try
+            {
+                beforeDot = Convert.ToInt32(numParts[0]);
+                afterDot = Convert.ToInt32(numParts[1]);
+            }
+            catch (Exception exception)
+            {
+                Console.WriteLine(exception);
+                RealNumber();
+            }
+
+            Console.WriteLine("Для перевода вещественного числа в 10 СС, нужно отдельно перевести целую часть, а затем дробную:");
+            
+            var listBeforeDot = From10ToAny(beforeDot, numSystem);
+
+            var listAfterDot = FractionalPart(afterDot, numSystem);
+            
+            Console.Write("Результат: ");
+
+            foreach (var el in listBeforeDot)
+            {
+                Console.Write(el);
+            }
+            Console.Write(".");
+            foreach (var el in listAfterDot)
+            {
+                Console.Write(el);
+            }
         }
     }
 }

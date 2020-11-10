@@ -216,7 +216,7 @@ namespace For5thGrader
             Console.WriteLine("Выберите, что вам нужно: " +
                               "\n1) Перевод из любой системы счисления в любую другую" +
                               "\n2) Перевод целых чисел в римскую систему счисления" +
-                              "\n3) Перевод вещественных чисел(не работает)" +
+                              "\n3) Перевод вещественных чисел" +
                               "\n4) Процесс сложения/вычитания в произвольной системе счисления(не работает)" +
                               "\n5) Процесс умножения в произвольных системах счисления(не работает)");
             var option = Console.ReadLine();
@@ -224,8 +224,8 @@ namespace For5thGrader
                 Converter.FromAnyToAny();       
             else if (option == "2")
                 RomanianNumber.Calculate();
-            //else if (option == "3")
-                //ConvertRealNumbers();
+            else if (option == "3")
+                Converter.RealNumber();
             //else if (option == "4")
                 //StackOrFind();
             /*else if (option == "5")
