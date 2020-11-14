@@ -9,9 +9,10 @@
         <e p="Check.cs" t="Include" />
         <e p="Converter.cs" t="Include" />
         <e p="For5thGrader.csproj" t="IncludeRecursive" />
-        <e p="Input.cs" t="Include" />
+        <e p="InputWithCheck.cs" t="Include" />
         <e p="obj" t="ExcludeRecursive" />
         <e p="Operations.cs" t="Include" />
+        <e p="Output.cs" t="Include" />
         <e p="Program.cs" t="Include" />
         <e p="Properties" t="Include">
           <e p="AssemblyInfo.cs" t="Include" />

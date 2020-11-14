@@ -27,30 +27,16 @@ namespace For5thGrader
             
             return true;
         }
-
-        public static bool Number(string num)
-        {
-            foreach (var el in num)
-            {
-                if (el > '9')
-                {
-                    //var elStr = Convert.ToString(el);
-                   // int n = (int) Enum.Parse(typeof(Alphabet), elStr);
-                }            
-            }
-
-            return true;
-
-        }             //doesn't work
-
+        
         public static bool IsRealNumber(string num)
         {
             if (!double.TryParse(num, out double c) || (!num.Contains(',')))
             {
                 Console.WriteLine("Число не соответствует типу с плавающей запятой!");
-                return true;
+                return false;
             }
-            return false;
+            return true;
         }
+
     }
 }

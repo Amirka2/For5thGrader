@@ -14,12 +14,15 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="fd7c15fb-245f-4272-ae76-6f3f7b48e451" name="Default Changelist" comment="1, 2, 3, 4 are ready">
-      <change afterPath="$PROJECT_DIR$/For5thGrader/Input.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.For5thGrader/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.For5thGrader/.idea/contentModel.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.idea.For5thGrader/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.For5thGrader/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/For5thGrader/Check.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/Check.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/For5thGrader/Converter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/Converter.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/For5thGrader/For5thGrader.csproj" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/For5thGrader.csproj" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/For5thGrader/InputWithCheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/InputWithCheck.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/For5thGrader/Operations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/Operations.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/For5thGrader/Output.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/Output.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/For5thGrader/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/Program.cs" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/For5thGrader/RomanianNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/RomanianNumber.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -31,24 +34,25 @@
   </component>
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3F2977EB-306B-4538-8F22-4FC6CC4DB2C4/47F/MonoIO.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/user/RiderProjects/For5thGrader/For5thGrader/Program.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3F2977EB-306B-4538-8F22-4FC6CC4DB2C4/45C/StreamWriter.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3F2977EB-306B-4538-8F22-4FC6CC4DB2C4/95/Number.Parsing.cs" root0="SKIP_HIGHLIGHTING" />
-    <setting file="mock:///Users/user/RiderProjects/For5thGrader/For5thGrader/Check.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3F2977EB-306B-4538-8F22-4FC6CC4DB2C4/5D/Convert.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/For5thGrader/InputWithChec.cs" root0="SKIP_HIGHLIGHTING" />
     <setting file="file://$APPLICATION_CONFIG_DIR$/resharper-host/SourcesCache/3F2977EB-306B-4538-8F22-4FC6CC4DB2C4/AC/Span.Fast.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
         <option value="$PROJECT_DIR$/For5thGrader/ToRome.cs" />
-        <option value="$PROJECT_DIR$/For5thGrader/RomanianNumber.cs" />
         <option value="$PROJECT_DIR$/For5thGrader/Transform.cs" />
-        <option value="$PROJECT_DIR$/For5thGrader/Converter.cs" />
-        <option value="$PROJECT_DIR$/For5thGrader/Check.cs" />
-        <option value="$PROJECT_DIR$/For5thGrader/Program.cs" />
-        <option value="$PROJECT_DIR$/For5thGrader/Operations.cs" />
         <option value="$PROJECT_DIR$/For5thGrader/Input.cs" />
+        <option value="$PROJECT_DIR$/For5thGrader/RomanianNumber.cs" />
+        <option value="$PROJECT_DIR$/For5thGrader/Output.cs" />
+        <option value="$PROJECT_DIR$/For5thGrader/Operations.cs" />
+        <option value="$PROJECT_DIR$/For5thGrader/Program.cs" />
+        <option value="$PROJECT_DIR$/For5thGrader/InputWithCheck.cs" />
+        <option value="$PROJECT_DIR$/For5thGrader/Check.cs" />
+        <option value="$PROJECT_DIR$/For5thGrader/Converter.cs" />
       </list>
     </option>
   </component>
@@ -107,6 +111,7 @@
       <workItem from="1604994989990" duration="9795000" />
       <workItem from="1605033264135" duration="604000" />
       <workItem from="1605083852264" duration="856000" />
+      <workItem from="1605380256626" duration="4361000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1604426360134</created>
@@ -181,8 +186,8 @@
     <option name="LAST_COMMIT_MESSAGE" value="1, 2, 3, 4 are ready" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="191" key="GridCell.Tab.0.bottom" timestamp="1605085741082">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="176" key="GridCell.Tab.0.bottom" timestamp="1605384044408">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1280.800/-1920.-671.1920.1080@-1920.-671.1920.1080" timestamp="1604321607787" />
     <state width="1878" height="403" key="GridCell.Tab.0.bottom/0.0.1280.800/-340.-1080.1920.1080@-340.-1080.1920.1080" timestamp="1604956663270" />
@@ -190,8 +195,9 @@
     <state width="1879" height="287" key="GridCell.Tab.0.bottom/0.23.1280.777/-1920.-648.1920.1057@-1920.-648.1920.1057" timestamp="1604523707089" />
     <state width="1874" height="226" key="GridCell.Tab.0.bottom/0.23.1280.777/-416.-1057.1920.1057@-416.-1057.1920.1057" timestamp="1604589879809" />
     <state width="1398" height="191" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1605085741082" />
-    <state width="1398" height="191" key="GridCell.Tab.0.center" timestamp="1605085741080">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="176" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1605384044408" />
+    <state width="1398" height="176" key="GridCell.Tab.0.center" timestamp="1605384044406">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1280.800/-1920.-671.1920.1080@-1920.-671.1920.1080" timestamp="1604321607784" />
     <state width="1878" height="403" key="GridCell.Tab.0.center/0.0.1280.800/-340.-1080.1920.1080@-340.-1080.1920.1080" timestamp="1604956663267" />
@@ -199,8 +205,9 @@
     <state width="1879" height="287" key="GridCell.Tab.0.center/0.23.1280.777/-1920.-648.1920.1057@-1920.-648.1920.1057" timestamp="1604523707088" />
     <state width="1874" height="226" key="GridCell.Tab.0.center/0.23.1280.777/-416.-1057.1920.1057@-416.-1057.1920.1057" timestamp="1604589879807" />
     <state width="1398" height="191" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1605085741080" />
-    <state width="1398" height="191" key="GridCell.Tab.0.left" timestamp="1605085741079">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="176" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1605384044406" />
+    <state width="1398" height="176" key="GridCell.Tab.0.left" timestamp="1605384044405">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1280.800/-1920.-671.1920.1080@-1920.-671.1920.1080" timestamp="1604321607782" />
     <state width="1878" height="403" key="GridCell.Tab.0.left/0.0.1280.800/-340.-1080.1920.1080@-340.-1080.1920.1080" timestamp="1604956663266" />
@@ -208,8 +215,9 @@
     <state width="1879" height="287" key="GridCell.Tab.0.left/0.23.1280.777/-1920.-648.1920.1057@-1920.-648.1920.1057" timestamp="1604523707087" />
     <state width="1874" height="226" key="GridCell.Tab.0.left/0.23.1280.777/-416.-1057.1920.1057@-416.-1057.1920.1057" timestamp="1604589879806" />
     <state width="1398" height="191" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1605085741079" />
-    <state width="1398" height="191" key="GridCell.Tab.0.right" timestamp="1605085741081">
-      <screen x="0" y="23" width="1440" height="877" />
+    <state width="1398" height="176" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1605384044405" />
+    <state width="1398" height="176" key="GridCell.Tab.0.right" timestamp="1605384044407">
+      <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1280.800/-1920.-671.1920.1080@-1920.-671.1920.1080" timestamp="1604321607785" />
     <state width="1878" height="403" key="GridCell.Tab.0.right/0.0.1280.800/-340.-1080.1920.1080@-340.-1080.1920.1080" timestamp="1604956663269" />
@@ -217,6 +225,7 @@
     <state width="1879" height="287" key="GridCell.Tab.0.right/0.23.1280.777/-1920.-648.1920.1057@-1920.-648.1920.1057" timestamp="1604523707089" />
     <state width="1874" height="226" key="GridCell.Tab.0.right/0.23.1280.777/-416.-1057.1920.1057@-416.-1057.1920.1057" timestamp="1604589879808" />
     <state width="1398" height="191" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1605085741081" />
+    <state width="1398" height="176" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1605384044407" />
     <state width="1398" height="331" key="GridCell.Tab.1.bottom" timestamp="1605023854150">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

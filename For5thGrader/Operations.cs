@@ -10,6 +10,7 @@ namespace For5thGrader
             A = 10, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
             a, b, c, d, e, f, g, h, i, j, k, l, m, n
         }
+        
         public static string GetShortNumber(string num1, string num2)
         {
             string res;
@@ -91,38 +92,24 @@ namespace For5thGrader
         
         public static void Addition()
         {
-            Console.Write("Введите систему счисления: ");
-            var numSystem = Convert.ToInt32(Console.ReadLine());
-            while (!Check.SS(numSystem))
-                numSystem = Convert.ToInt32(Console.ReadLine());
-            
-            Console.Write("Введите 1 число: ");
-            var num1 = Console.ReadLine();
-            while (!Check.NumInSS(num1, numSystem))
-                num1 = Console.ReadLine();
-            
-            Console.Write("Введите 2 число: ");
-            var num2 = Console.ReadLine();
-            while (!Check.NumInSS(num2, numSystem))
-                num2 = Console.ReadLine();
+            var StrNumSystem = InputWithCheck.CheckAndReturnSs();
+            var numSystem = Convert.ToInt32(StrNumSystem);
+
+            var num1 = InputWithCheck.CheckAndReturnNumber(numSystem);
+            var num2 = InputWithCheck.CheckAndReturnNumber(numSystem);
 
             var shortNum = GetShortNumber(num1, num2);
             var longNum = GetLongNumber(num1, num2);
 
-            var diff = (int) Math.Abs(longNum.Length - shortNum.Length);
+            var diff = Math.Abs(longNum.Length - shortNum.Length);
 
             var shortNumList = AddZeros(shortNum, diff);
             var longNumList = Converter.ToNumList(longNum);
 
             Console.Clear();
-            Console.SetCursorPosition(80, 3);
-            foreach (var el in longNumList)
-                Console.Write(el + " ");
-            Console.SetCursorPosition(79, 4);
+            Output.PrintNumber(longNumList);
             Console.WriteLine("+");
-            Console.SetCursorPosition(80, 5);
-            foreach (var el in shortNumList)
-                Console.Write(el + " ");
+            Output.PrintNumber(shortNumList);
             Console.WriteLine();
             
             Calculation(longNumList, shortNumList, numSystem);
@@ -130,20 +117,15 @@ namespace For5thGrader
 
         public static void Subtraction()
         {
-            Console.Write("Введите систему счисления: ");
-            var numSystem = Console.ReadLine();
-            while (!Check.SS(Convert.ToInt32(numSystem)) || string.IsNullOrWhiteSpace(numSystem))
-                numSystem = Console.ReadLine();
+            var numSystem = InputWithCheck.CheckAndReturnSs();
             
-            Console.Write("Введите систему счисления: ");
-            var num1 = Console.ReadLine();
-            while (!Check.NumInSS(num1, Convert.ToInt32(numSystem)) || string.IsNullOrWhiteSpace(num1))
-                num1 = Console.ReadLine();
+            var num1 = InputWithCheck.CheckAndReturnNumber(Convert.ToInt32(numSystem));
+            var num2 = InputWithCheck.CheckAndReturnNumber(Convert.ToInt32(numSystem));
+
+            var numList1 = Converter.ToNumList(num1);
+            var numList2 = Converter.ToNumList(num1);
+
             
-            Console.Write("Введите систему счисления: ");
-            var num2 = Console.ReadLine();
-            while (!Check.NumInSS(num2, Convert.ToInt32(numSystem)) || string.IsNullOrWhiteSpace(num2))
-                num2 = Console.ReadLine();
         }
 
         public static void Multiply()

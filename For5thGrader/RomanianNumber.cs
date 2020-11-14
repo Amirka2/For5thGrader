@@ -7,23 +7,10 @@ namespace For5thGrader
     {
         public static void Calculate()
         {
-            var num = Console.ReadLine();
-            Console.ForegroundColor = ConsoleColor.Green;
-            Console.WriteLine("| = 1, || = 2, ||| = 3, |V = 4, V = 5, V|, V|| = 7, V||| = 8, |X = 9 \n" +
-                              "X = 10, X| = 11, X|| = 12, X||| = 13, X|V = 14, XV = 15, XV| = 16, XV|| = 17, XV||| = 18, X|X = 19 \n" +
-                              "| = 1, V = 5, X = 10, L = 50, C = 100, D = 500, M = 1000, V* = 5000, X* = 10000 \n" +
-                              "Логика такая же, как и с числами от 1 до 20: добавляем младший разряд до тех пор, " +
-                              "пока не останется один шаг до вышестоящего разряда, как только доходит до него, " +
-                              "мы пишем один младший разряд слвеа и за ним вышестоящий разряд. \nСледующим шагом убираем" +
-                              " младший разряд слева, оставляя один вышестоящий. Дальше к нему справа дописываем младшие, если хотим добавить шаг\n" +
-                              "Пример: | -> || -> ||| -> |V -> V -> V| -> V|| -> V||| \n" +
-                              "Дальше все повторяется");
-            Console.ResetColor();
-            var discharge = new List<int> { };
-            for (int i = 0; i < num.Length; i++)
-            {
-                discharge.Add(int.Parse(num[i].ToString()));
-            }
+            var num = InputWithCheck.CheckAndReturnNumber(10);
+            Output.PrintRulesInRomanianNumbers();
+
+            var discharge = Converter.ToNumList(num);
 
             var l = num.Length;
             int thsnd = 0, hndr = 0, tens = 0, ones = 0;
@@ -160,12 +147,7 @@ namespace For5thGrader
                 }
             }
 
-            Console.ForegroundColor = ConsoleColor.Red;
-            Console.Write($"Результат: {num} = ");
-            foreach (var str in output)
-            {
-                Console.Write(str);
-            }
+            Output.PrintResultInRomanianNumbers(num, output);
         } 
     }
 }

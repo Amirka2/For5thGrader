@@ -31,48 +31,22 @@ namespace For5thGrader
             return listNum;
         }
 
-        public static void FromAnyToAny()
+        public static void FromAnyToAny()                                        // 1 Task
         {
-            Console.Write("Введите начальную систему счисления: ");
-            var strNumSystem1 = Console.ReadLine();
-            while (string.IsNullOrEmpty(strNumSystem1) || !Check.SS(Convert.ToInt32(strNumSystem1)))
-            {
-                FromAnyToAny();
-            }
+            var strNumSystem1 = InputWithCheck.CheckAndReturnSs("Введите начальную систему счисления: ");
             int numSystem1 = Convert.ToInt32(strNumSystem1);
             
-            Console.Write("Введите число: ");
-            var num = Console.ReadLine();
-            if (string.IsNullOrWhiteSpace(num))
-            {
-                Console.WriteLine("Ошибка ввода!");
-                FromAnyToAny();
-            }
-            else if (!Check.NumInSS(num, numSystem1))
-            {
-                Console.WriteLine("Число не подходит данной системе счисления! \nВведите заново");
-                FromAnyToAny();
-            }
-            
-            Console.Write("Введите желаемую систему счисления: ");
-            var strNumSystem2 = Console.ReadLine();
-            while (string.IsNullOrEmpty(strNumSystem2))
-            {
-                strNumSystem2 = Console.ReadLine();
-            }
+            var num = InputWithCheck.CheckAndReturnNumber(numSystem1);
+
+            var strNumSystem2 = InputWithCheck.CheckAndReturnSs("Введите конечную систему счисления: ");
             int numSystem2 = Convert.ToInt32(strNumSystem2);
-            while (numSystem2 > 50 || numSystem2 < 2)
-            {
-                Console.WriteLine("Система счисления не поддерживается! \nВведите другую (2-50)");
-                numSystem2 = Convert.ToInt32(Console.ReadLine());
-            }
 
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Для перевода из любой системы счисления в любую другую, нужно перевести число в десятичную систему, а потом из десятичной в нужную");
             
             int number = FromAnyTo10(num, numSystem1); 
             var result = From10ToAny(number, numSystem2);
-        }                                    // 1 Task
+        }                                    
 
         public static int FromAnyTo10(string num, int numSystem)
         {
@@ -119,7 +93,7 @@ namespace For5thGrader
             return result;
         }            // 1 Task
 
-        static List<int> FractionalPart(int num, int numSystem)
+        static List<int> GetFractionalPart(int num, int numSystem)
         {
             Console.ForegroundColor = ConsoleColor.Cyan;
             string zero = "0,";
@@ -151,50 +125,36 @@ namespace For5thGrader
 
             return result;
         }                // 3 Task
+        
         public static void RealNumber()
         {
-            Console.Write("Введите число в десятичной системе счисления: ");
-            var num = Console.ReadLine();
-            while (Check.IsRealNumber(num) || string.IsNullOrWhiteSpace(num))
-                num = Console.ReadLine();
+            var num = InputWithCheck.CheckAndReturnNumber(10, "Введите число в десятичной системе счисления: ");
             
-            Console.Write("Введите желаемую систему счисления: ");
-            var numSystem = Convert.ToInt32(Console.ReadLine());
-            while (!Check.SS(numSystem) || string.IsNullOrWhiteSpace(numSystem.ToString()))
-                numSystem = Convert.ToInt32(Console.ReadLine());
+            var strNumSystem = InputWithCheck.CheckAndReturnSs("Введите желаемую систему счисления: ");
+            var numSystem = Convert.ToInt32(strNumSystem);
 
             string[] numParts = num.Split(',', '.');
 
             int beforeDot = 0, afterDot = 0;
 
-            try
+
+            if (!Check.IsRealNumber(num))
+                RealNumber();
+            else
             {
                 beforeDot = Convert.ToInt32(numParts[0]);
                 afterDot = Convert.ToInt32(numParts[1]);
-            }
-            catch (Exception exception)
-            {
-                Console.WriteLine(exception);
-                RealNumber();
             }
 
             Console.WriteLine("Для перевода вещественного числа в 10 СС, нужно отдельно перевести целую часть, а затем дробную:");
             
             var listBeforeDot = From10ToAny(beforeDot, numSystem);
 
-            var listAfterDot = FractionalPart(afterDot, numSystem);
+            var listAfterDot = GetFractionalPart(afterDot, numSystem);
             
             Console.Write("Результат: ");
 
-            foreach (var el in listBeforeDot)
-            {
-                Console.Write(el);
-            }
-            Console.Write(".");
-            foreach (var el in listAfterDot)
-            {
-                Console.Write(el);
-            }
+            Output.PrintRealNumber(listBeforeDot, listAfterDot);
         }                                       // 3 Task
     }
 }
