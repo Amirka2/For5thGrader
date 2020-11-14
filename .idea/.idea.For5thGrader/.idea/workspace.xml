@@ -13,16 +13,10 @@
     </select>
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="fd7c15fb-245f-4272-ae76-6f3f7b48e451" name="Default Changelist" comment="1, 2, 3, 4 are ready">
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.For5thGrader/.idea/contentModel.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.For5thGrader/.idea/contentModel.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/.idea.For5thGrader/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.idea.For5thGrader/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/For5thGrader/Check.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/Check.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/For5thGrader/Converter.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/Converter.cs" afterDir="false" />
+    <list default="true" id="fd7c15fb-245f-4272-ae76-6f3f7b48e451" name="Default Changelist" comment="Стало красивее">
       <change beforePath="$PROJECT_DIR$/For5thGrader/InputWithCheck.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/InputWithCheck.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/For5thGrader/Operations.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/Operations.cs" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/For5thGrader/Output.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/Output.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/For5thGrader/Program.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/Program.cs" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/For5thGrader/RomanianNumber.cs" beforeDir="false" afterPath="$PROJECT_DIR$/For5thGrader/RomanianNumber.cs" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -47,12 +41,12 @@
         <option value="$PROJECT_DIR$/For5thGrader/Transform.cs" />
         <option value="$PROJECT_DIR$/For5thGrader/Input.cs" />
         <option value="$PROJECT_DIR$/For5thGrader/RomanianNumber.cs" />
-        <option value="$PROJECT_DIR$/For5thGrader/Output.cs" />
-        <option value="$PROJECT_DIR$/For5thGrader/Operations.cs" />
         <option value="$PROJECT_DIR$/For5thGrader/Program.cs" />
         <option value="$PROJECT_DIR$/For5thGrader/InputWithCheck.cs" />
-        <option value="$PROJECT_DIR$/For5thGrader/Check.cs" />
         <option value="$PROJECT_DIR$/For5thGrader/Converter.cs" />
+        <option value="$PROJECT_DIR$/For5thGrader/Check.cs" />
+        <option value="$PROJECT_DIR$/For5thGrader/Output.cs" />
+        <option value="$PROJECT_DIR$/For5thGrader/Operations.cs" />
       </list>
     </option>
   </component>
@@ -111,7 +105,7 @@
       <workItem from="1604994989990" duration="9795000" />
       <workItem from="1605033264135" duration="604000" />
       <workItem from="1605083852264" duration="856000" />
-      <workItem from="1605380256626" duration="4361000" />
+      <workItem from="1605380256626" duration="4932000" />
     </task>
     <task id="LOCAL-00001" summary="1">
       <created>1604426360134</created>
@@ -155,7 +149,14 @@
       <option name="project" value="LOCAL" />
       <updated>1605023714677</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="Стало красивее">
+      <created>1605384738273</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1605384738273</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -183,10 +184,11 @@
     <MESSAGE value="1 &amp; 2 are ready" />
     <MESSAGE value="1, 2, 3 are ready" />
     <MESSAGE value="1, 2, 3, 4 are ready" />
-    <option name="LAST_COMMIT_MESSAGE" value="1, 2, 3, 4 are ready" />
+    <MESSAGE value="Стало красивее" />
+    <option name="LAST_COMMIT_MESSAGE" value="Стало красивее" />
   </component>
   <component name="WindowStateProjectService">
-    <state width="1398" height="176" key="GridCell.Tab.0.bottom" timestamp="1605384044408">
+    <state width="1398" height="176" key="GridCell.Tab.0.bottom" timestamp="1605384915759">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.bottom/0.0.1280.800/-1920.-671.1920.1080@-1920.-671.1920.1080" timestamp="1604321607787" />
@@ -195,8 +197,8 @@
     <state width="1879" height="287" key="GridCell.Tab.0.bottom/0.23.1280.777/-1920.-648.1920.1057@-1920.-648.1920.1057" timestamp="1604523707089" />
     <state width="1874" height="226" key="GridCell.Tab.0.bottom/0.23.1280.777/-416.-1057.1920.1057@-416.-1057.1920.1057" timestamp="1604589879809" />
     <state width="1398" height="191" key="GridCell.Tab.0.bottom/0.23.1440.877@0.23.1440.877" timestamp="1605085741082" />
-    <state width="1398" height="176" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1605384044408" />
-    <state width="1398" height="176" key="GridCell.Tab.0.center" timestamp="1605384044406">
+    <state width="1398" height="176" key="GridCell.Tab.0.bottom/0.25.1440.875@0.25.1440.875" timestamp="1605384915759" />
+    <state width="1398" height="176" key="GridCell.Tab.0.center" timestamp="1605384915758">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.center/0.0.1280.800/-1920.-671.1920.1080@-1920.-671.1920.1080" timestamp="1604321607784" />
@@ -205,8 +207,8 @@
     <state width="1879" height="287" key="GridCell.Tab.0.center/0.23.1280.777/-1920.-648.1920.1057@-1920.-648.1920.1057" timestamp="1604523707088" />
     <state width="1874" height="226" key="GridCell.Tab.0.center/0.23.1280.777/-416.-1057.1920.1057@-416.-1057.1920.1057" timestamp="1604589879807" />
     <state width="1398" height="191" key="GridCell.Tab.0.center/0.23.1440.877@0.23.1440.877" timestamp="1605085741080" />
-    <state width="1398" height="176" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1605384044406" />
-    <state width="1398" height="176" key="GridCell.Tab.0.left" timestamp="1605384044405">
+    <state width="1398" height="176" key="GridCell.Tab.0.center/0.25.1440.875@0.25.1440.875" timestamp="1605384915758" />
+    <state width="1398" height="176" key="GridCell.Tab.0.left" timestamp="1605384915758">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.left/0.0.1280.800/-1920.-671.1920.1080@-1920.-671.1920.1080" timestamp="1604321607782" />
@@ -215,8 +217,8 @@
     <state width="1879" height="287" key="GridCell.Tab.0.left/0.23.1280.777/-1920.-648.1920.1057@-1920.-648.1920.1057" timestamp="1604523707087" />
     <state width="1874" height="226" key="GridCell.Tab.0.left/0.23.1280.777/-416.-1057.1920.1057@-416.-1057.1920.1057" timestamp="1604589879806" />
     <state width="1398" height="191" key="GridCell.Tab.0.left/0.23.1440.877@0.23.1440.877" timestamp="1605085741079" />
-    <state width="1398" height="176" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1605384044405" />
-    <state width="1398" height="176" key="GridCell.Tab.0.right" timestamp="1605384044407">
+    <state width="1398" height="176" key="GridCell.Tab.0.left/0.25.1440.875@0.25.1440.875" timestamp="1605384915758" />
+    <state width="1398" height="176" key="GridCell.Tab.0.right" timestamp="1605384915759">
       <screen x="0" y="25" width="1440" height="875" />
     </state>
     <state width="1878" height="305" key="GridCell.Tab.0.right/0.0.1280.800/-1920.-671.1920.1080@-1920.-671.1920.1080" timestamp="1604321607785" />
@@ -225,7 +227,7 @@
     <state width="1879" height="287" key="GridCell.Tab.0.right/0.23.1280.777/-1920.-648.1920.1057@-1920.-648.1920.1057" timestamp="1604523707089" />
     <state width="1874" height="226" key="GridCell.Tab.0.right/0.23.1280.777/-416.-1057.1920.1057@-416.-1057.1920.1057" timestamp="1604589879808" />
     <state width="1398" height="191" key="GridCell.Tab.0.right/0.23.1440.877@0.23.1440.877" timestamp="1605085741081" />
-    <state width="1398" height="176" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1605384044407" />
+    <state width="1398" height="176" key="GridCell.Tab.0.right/0.25.1440.875@0.25.1440.875" timestamp="1605384915759" />
     <state width="1398" height="331" key="GridCell.Tab.1.bottom" timestamp="1605023854150">
       <screen x="0" y="0" width="1440" height="900" />
     </state>

@@ -106,11 +106,7 @@ namespace For5thGrader
             var shortNumList = AddZeros(shortNum, diff);
             var longNumList = Converter.ToNumList(longNum);
 
-            Console.Clear();
-            Output.PrintNumber(longNumList);
-            Console.WriteLine("+");
-            Output.PrintNumber(shortNumList);
-            Console.WriteLine();
+            Output.PrintExpressionInCenter(longNumList, '+', shortNumList);
             
             Calculation(longNumList, shortNumList, numSystem);
         }
