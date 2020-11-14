@@ -35,7 +35,7 @@ namespace For5thGrader
         {
             Console.Write("Введите начальную систему счисления: ");
             var strNumSystem1 = Console.ReadLine();
-            while (string.IsNullOrEmpty(strNumSystem1))
+            while (string.IsNullOrEmpty(strNumSystem1) || !Check.SS(Convert.ToInt32(strNumSystem1)))
             {
                 FromAnyToAny();
             }
@@ -48,7 +48,7 @@ namespace For5thGrader
                 Console.WriteLine("Ошибка ввода!");
                 FromAnyToAny();
             }
-            else if (!Check.NumInSS(num, numSystem1) || !Check.Number(num))
+            else if (!Check.NumInSS(num, numSystem1))
             {
                 Console.WriteLine("Число не подходит данной системе счисления! \nВведите заново");
                 FromAnyToAny();

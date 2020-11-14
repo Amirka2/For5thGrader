@@ -88,6 +88,7 @@ namespace For5thGrader
             var result = GetNumInSS(expression);
             Console.WriteLine("Результат: " + result);
         }
+        
         public static void Addition()
         {
             Console.Write("Введите систему счисления: ");
@@ -129,7 +130,20 @@ namespace For5thGrader
 
         public static void Subtraction()
         {
+            Console.Write("Введите систему счисления: ");
+            var numSystem = Console.ReadLine();
+            while (!Check.SS(Convert.ToInt32(numSystem)) || string.IsNullOrWhiteSpace(numSystem))
+                numSystem = Console.ReadLine();
             
+            Console.Write("Введите систему счисления: ");
+            var num1 = Console.ReadLine();
+            while (!Check.NumInSS(num1, Convert.ToInt32(numSystem)) || string.IsNullOrWhiteSpace(num1))
+                num1 = Console.ReadLine();
+            
+            Console.Write("Введите систему счисления: ");
+            var num2 = Console.ReadLine();
+            while (!Check.NumInSS(num2, Convert.ToInt32(numSystem)) || string.IsNullOrWhiteSpace(num2))
+                num2 = Console.ReadLine();
         }
 
         public static void Multiply()

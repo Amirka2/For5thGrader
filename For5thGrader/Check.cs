@@ -1,18 +1,10 @@
 using System;
 using System.Linq;
-using static System.Enum;
-using static System.Convert;
 
 namespace For5thGrader
 {
     public class Check
     {
-        enum Alphabet
-        {
-            A = 10, B, C, D, E, F, G, H, I, J, K, L, M, N, O, P, Q, R, S, T, U, V, W, X, Y, Z,
-            a, b, c, d, e, f, g, h, i, j, k, l, m, n
-        }
-        
         public static bool NumInSS(string num, int numSys)
         {
             var numList = Converter.ToNumList(num);
@@ -49,7 +41,7 @@ namespace For5thGrader
 
             return true;
 
-        }
+        }             //doesn't work
 
         public static bool IsRealNumber(string num)
         {

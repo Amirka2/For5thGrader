@@ -40,7 +40,9 @@
     <ItemGroup>
         <Compile Include="Check.cs" />
         <Compile Include="Converter.cs" />
+        <Compile Include="InputWithCheck.cs" />
         <Compile Include="Operations.cs" />
+        <Compile Include="Output.cs" />
         <Compile Include="Program.cs" />
         <Compile Include="Properties\AssemblyInfo.cs" />
         <Compile Include="RomanianNumber.cs" />
