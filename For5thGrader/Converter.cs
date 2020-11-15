@@ -48,21 +48,21 @@ namespace For5thGrader
             var result = From10ToAny(number, numSystem2);
         }                                    
 
-        public static int FromAnyTo10(string num, int numSystem, bool check)
+        public static int FromAnyTo10(string num, int numSystem, bool show)
         {
             var number = ToNumList(num);
             Console.ForegroundColor = ConsoleColor.Blue;
-            if (check)
+            if (show)
                 Output.FromAnyTo10Text1();
 
             var result = 0;
             for (int i = number.Count - 1, j = 0; i >= 0; i--, j++)
             {
-                if (check)
+                if (show)
                     Console.WriteLine($"Результат = {result} + {number[j]} * {numSystem} ^ {i} = {number[j] * (int)Math.Pow(numSystem, i)}");
                 result += number[j] * (int)Math.Pow(numSystem, i);
             }
-            if (check)
+            if (show)
                 Console.WriteLine($"Складываем \nИтог: {result}");
 
             return result;

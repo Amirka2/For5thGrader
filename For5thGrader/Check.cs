@@ -39,17 +39,14 @@ namespace For5thGrader
             return true;
         }
         
-        public static bool IsList1BiggerThanList2(string list1, string list2, int numSystem)
+        public static bool IsList1BiggerThanList2(string num1, string num2, int numSystem)
         {
             var check = false;
             
-            var num1 = Converter.FromAnyTo10(list1, numSystem, false);
-            var num2 = Converter.FromAnyTo10(list2, numSystem, false);
+            var intNum1 = Converter.FromAnyTo10(num1, numSystem, false);
+            var intNum2 = Converter.FromAnyTo10(num2, numSystem, false);
 
-            if (num1 < num2)
-                return false;
-
-            return true;
+            return (intNum1 >= intNum2);
         }
     }
 }

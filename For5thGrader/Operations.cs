@@ -136,8 +136,6 @@ namespace For5thGrader
                 numList1 = Converter.ToNumList(num1);
             }
 
-            var add = 0;
-            var result = new List<int> { };
             bool minus = false;
             
             Console.Clear();
@@ -146,15 +144,21 @@ namespace For5thGrader
             if (!Check.IsList1BiggerThanList2(num1, num2, numSystem))
             {
                 minus = true;
-                var list = new List<int>{};
-                list = numList1;
+                var list = numList1;
                 numList1 = numList2;
                 numList2 = list;
                 Output.PrintColorfulText(2, "Если первое число меньше второго, то нужно поменять их местами" +
                                             " и сделать вычитание первого из второго, поставив минус перед результатом");
             }
+            else
+            {
+                numList1 = Converter.ToNumList(num1);
+                numList2 = Converter.ToNumList(num2);
+            }
             Output.PrintExpressionInCenter(numList1, '-', numList2);
             
+            var result = new List<int> { };
+            var add = 0;
             
             for (int i = numList1.Count - 1; i >= 0; i--)
             {
@@ -169,9 +173,18 @@ namespace For5thGrader
                 }
                 else
                 {
-                    tempRes = numSystem + numList1[i] - numList2[i];
+                    for (int j = i - 1; j >= 0; j--)
+                    {
+                        if (numList1[i + j] != 0)
+                        {
+                            numList1[i + j]--;
+                            tempRes = numSystem + numList1[i] - numList2[i];
+                        }
+                    }
+
                     result.Add(tempRes + add);
                     add--;
+                    
                     Output.PrintColorfulText(1, "Если верхняя цифра меньше нижней, то занимаем из " +
                                                 "разряда старше единицу, складываем ее с верхним числом и вычитаем " +
                                                 "из этого нижнее число ");
@@ -184,7 +197,7 @@ namespace For5thGrader
             result.Reverse();
 
             var strResult = GetNumInSS(result);
-            if (minus == true)
+            if (minus)
                 string.Concat("-", strResult);
             Console.WriteLine("Результат: " + strResult);
         }

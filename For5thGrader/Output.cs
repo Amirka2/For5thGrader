@@ -85,13 +85,13 @@ namespace For5thGrader
             }
         }
 
-        public static void PrintColorfulText(int option, string text)
+        public static void PrintColorfulText(int color, string text)
         {
-            if (option == 0)
+            if (color == 0)
                 Console.ForegroundColor = ConsoleColor.Red;
-            else if (option == 1)
+            else if (color == 1)
                 Console.ForegroundColor = ConsoleColor.Green;
-            else if (option == 2)
+            else if (color == 2)
                 Console.ForegroundColor = ConsoleColor.Blue;
             Console.WriteLine(text);
             Console.ResetColor();
