@@ -22,7 +22,7 @@ namespace For5thGrader
                 Operations.Multiply();
             else
             {
-                Console.Write("Введите число от 1 до 5: ");
+                Console.Write("Введите число от 1 до 6: ");
                 option = Console.ReadLine();
             }
         }

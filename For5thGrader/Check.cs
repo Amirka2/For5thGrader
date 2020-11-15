@@ -1,5 +1,6 @@
 using System;
 using System.Linq;
+using System.Collections.Generic;
 
 namespace For5thGrader
 {
@@ -37,6 +38,15 @@ namespace For5thGrader
             }
             return true;
         }
+        
+        public static bool IsList1BiggerThanList2(string num1, string num2, int numSystem)
+        {
+            var check = false;
+            
+            var intNum1 = Converter.FromAnyTo10(num1, numSystem, false);
+            var intNum2 = Converter.FromAnyTo10(num2, numSystem, false);
 
+            return (intNum1 >= intNum2);
+        }
     }
 }
