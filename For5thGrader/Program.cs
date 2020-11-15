@@ -6,33 +6,57 @@ namespace For5thGrader
 {
     internal class Program
     {
-        private static void ChooseMainOptions(string option)
+        private static void ChooseMainOptions(int index)
         {
-            if (option == "1")
+            if (index == 0)
                 Converter.FromAnyToAny();       
-            else if (option == "2")
+            else if (index == 1)
                 RomanianNumber.Calculate();
-            else if (option == "3")
+            else if (index == 2)
                 Converter.RealNumber();
-            else if (option == "4")
+            else if (index == 3)
                 Operations.Addition();
-            else if (option == "5")
+            else if (index == 4)
                 Operations.Subtraction();
-            else if (option == "6")
+            else if (index == 5)
                 Operations.Multiply();
-            else
-            {
-                Console.Write("Введите число от 1 до 6: ");
-                option = Console.ReadLine();
-            }
         }
         
         public static void Main(string[] args)
         {
-            Output.PrintStartOptions();
-            var option = Console.ReadLine();
+            var menuItems = new List<string>
+            {
+                "1) Перевод из любой системы счисления в любую другую",
+                "2) Перевод целых чисел в римскую систему счисления",
+                "3) Перевод вещественных чисел" ,
+                "4) Процесс сложения в произвольной системе счисления" ,
+                "5) Процесс вычитания в произвольной системе счисления" ,
+                "6) Процесс умножения в произвольных системах счисления(не работает)"
+            };
 
-            ChooseMainOptions(option);
+            while(true)
+            {
+                ConsoleKeyInfo key;
+                int index = 0;
+                Console.CursorVisible = false;
+                do
+                {
+                    Console.Clear();
+                    Output.PrintStartOptions(menuItems, index);
+
+                    key = Console.ReadKey();
+                    if (key.Key == ConsoleKey.UpArrow) index--;
+                    if (key.Key == ConsoleKey.DownArrow) index++;
+
+                    if (index < 0) index = menuItems.Count - 1;
+                    if (index >= 6) index = 0;
+                    if (key.Key == ConsoleKey.Enter) break;
+
+                } while (key.Key != ConsoleKey.Escape);
+
+                ChooseMainOptions(index);
+                Console.ReadKey();
+            }
         }
     }
 }

@@ -85,11 +85,10 @@ namespace For5thGrader
 
             result.Reverse();
             Console.Write($"Теперь записываем остатки в обратной последовательности \nПолучаем конечный результат: ");
-            foreach (var el in result)
-            {
-                Console.Write(el);
-            }
-            Console.WriteLine();
+            
+            var res = Operations.GetNumInSS(result);
+            Console.WriteLine("Результат: " + res);
+            Console.ResetColor();
             
             return result;
         }            // 1 Task

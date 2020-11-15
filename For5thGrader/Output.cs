@@ -13,15 +13,15 @@ namespace For5thGrader
                                  "d = 39, e = 40, f = 41, g = 42, h = 43, i = 44, j = 45, k = 46, l = 47, m = 48, \n" +
                                  "n = 49");
         }
-        public static void PrintStartOptions()
+        public static void PrintStartOptions(List<string> items, int index)
         {
-            Console.WriteLine("Выберите, что вам нужно: " +
-                              "\n1) Перевод из любой системы счисления в любую другую" +
-                              "\n2) Перевод целых чисел в римскую систему счисления" +
-                              "\n3) Перевод вещественных чисел" +
-                              "\n4) Процесс сложения в произвольной системе счисления" +
-                              "\n5) Процесс вычитания в произвольной системе счисления(не работает)" +
-                              "\n6) Процесс умножения в произвольных системах счисления(не работает)");
+            for (int i = 0; i < items.Count; i++)
+            {
+                if (i == index)
+                    Console.ForegroundColor = ConsoleColor.Red;
+                Console.WriteLine(items[i]);
+                Console.ResetColor();
+            }
         }
         
         public static void PrintNumber(List<int> number, int i)
