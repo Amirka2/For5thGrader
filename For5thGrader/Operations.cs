@@ -36,9 +36,8 @@ namespace For5thGrader
         {
             var list = new List<int> { };
             for (int i = 0; i < diff; i++)
-            {
                 list.Add(0);
-            }
+            
             list.AddRange(Converter.ToNumList(num));
             
             return list;
@@ -58,6 +57,8 @@ namespace For5thGrader
                     result = string.Concat(result, Convert.ToString(el));
                 }
             }
+            
+            result = result.TrimStart('0');
 
             return result;
         }
@@ -130,12 +131,18 @@ namespace For5thGrader
                 numList1 = AddZeros(num1, Math.Abs(diff));
                 numList2 = Converter.ToNumList(num2);
             }
-            else
+            else if (diff >= 0)
             {
                 numList2 = AddZeros(num2, diff);
                 numList1 = Converter.ToNumList(num1);
             }
 
+            foreach (var el in numList1)
+                Console.Write(el);
+            Console.WriteLine();
+            foreach (var el in numList2)
+                Console.Write(el);
+            
             bool minus = false;
             
             Console.Clear();
@@ -149,23 +156,24 @@ namespace For5thGrader
                 numList2 = list;
                 Output.PrintColorfulText(2, "Если первое число меньше второго, то нужно поменять их местами" +
                                             " и сделать вычитание первого из второго, поставив минус перед результатом");
+                    Console.WriteLine("if");
+                foreach (var el in numList1)
+                    Console.Write(el);
+                Console.WriteLine();
+                foreach (var el in numList2)
+                    Console.Write(el);
             }
-            else
-            {
-                numList1 = Converter.ToNumList(num1);
-                numList2 = Converter.ToNumList(num2);
-            }
+            
             Output.PrintExpressionInCenter(numList1, '-', numList2);
             
             var result = new List<int> { };
-            var add = 0;
             
             for (int i = numList1.Count - 1; i >= 0; i--)
             {
                 var tempRes = numList1[i] - numList2[i];
                 if (tempRes >= 0)
                 {
-                    result.Add(tempRes + add);
+                    result.Add(tempRes);
                     Output.PrintColorfulText(1, "Если верхняя цифра больше нижней," +
                                                 " то просто вычитаем верхнее из нижнего");
                     Output.PrintColorfulText(2, $"верхняя цифра({numList1[i]}) - нижняя цифра({numList2[i]}) " +
@@ -175,15 +183,18 @@ namespace For5thGrader
                 {
                     for (int j = i - 1; j >= 0; j--)
                     {
-                        if (numList1[i + j] != 0)
+                        if (numList1[j] != 0)
                         {
-                            numList1[i + j]--;
+                            numList1[j]--;
                             tempRes = numSystem + numList1[i] - numList2[i];
+                            for (int m = i - j - 1; m > 0; m--)
+                            {
+                                numList1[m] = numSystem - 1;
+                            }
                         }
                     }
 
-                    result.Add(tempRes + add);
-                    add--;
+                    result.Add(tempRes);
                     
                     Output.PrintColorfulText(1, "Если верхняя цифра меньше нижней, то занимаем из " +
                                                 "разряда старше единицу, складываем ее с верхним числом и вычитаем " +
