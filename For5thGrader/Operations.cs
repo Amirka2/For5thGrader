@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Text;
 
 namespace For5thGrader
 {
@@ -92,8 +93,8 @@ namespace For5thGrader
         
         public static void Addition()
         {
-            var StrNumSystem = InputWithCheck.CheckAndReturnSs();
-            var numSystem = Convert.ToInt32(StrNumSystem);
+            var strNumSystem = InputWithCheck.CheckAndReturnSs();
+            var numSystem = Convert.ToInt32(strNumSystem);
 
             var num1 = InputWithCheck.CheckAndReturnNumber(numSystem);
             var num2 = InputWithCheck.CheckAndReturnNumber(numSystem);
@@ -106,6 +107,7 @@ namespace For5thGrader
             var shortNumList = AddZeros(shortNum, diff);
             var longNumList = Converter.ToNumList(longNum);
 
+            Console.Clear();
             Output.PrintExpressionInCenter(longNumList, '+', shortNumList);
             
             Calculation(longNumList, shortNumList, numSystem);
@@ -113,15 +115,78 @@ namespace For5thGrader
 
         public static void Subtraction()
         {
-            var numSystem = InputWithCheck.CheckAndReturnSs();
-            
-            var num1 = InputWithCheck.CheckAndReturnNumber(Convert.ToInt32(numSystem));
-            var num2 = InputWithCheck.CheckAndReturnNumber(Convert.ToInt32(numSystem));
+            var strNumSystem = InputWithCheck.CheckAndReturnSs();
+            var numSystem = Convert.ToInt32(strNumSystem);
 
-            var numList1 = Converter.ToNumList(num1);
-            var numList2 = Converter.ToNumList(num1);
+            var num1 = InputWithCheck.CheckAndReturnNumber(numSystem);
+            var num2 = InputWithCheck.CheckAndReturnNumber(numSystem);
 
+            var numList1 = new List<int> {} ;
+            var numList2 = new List<int> {} ;
             
+            var diff = num1.Length - num2.Length;
+            if (diff < 0)
+            {
+                numList1 = AddZeros(num1, Math.Abs(diff));
+                numList2 = Converter.ToNumList(num2);
+            }
+            else
+            {
+                numList2 = AddZeros(num2, diff);
+                numList1 = Converter.ToNumList(num1);
+            }
+
+            var add = 0;
+            var result = new List<int> { };
+            bool minus = false;
+            
+            Console.Clear();
+            Output.PrintAlphabet();
+            
+            if (!Check.IsList1BiggerThanList2(num1, num2, numSystem))
+            {
+                minus = true;
+                var list = new List<int>{};
+                list = numList1;
+                numList1 = numList2;
+                numList2 = list;
+                Output.PrintColorfulText(2, "Если первое число меньше второго, то нужно поменять их местами" +
+                                            " и сделать вычитание первого из второго, поставив минус перед результатом");
+            }
+            Output.PrintExpressionInCenter(numList1, '-', numList2);
+            
+            
+            for (int i = numList1.Count - 1; i >= 0; i--)
+            {
+                var tempRes = numList1[i] - numList2[i];
+                if (tempRes >= 0)
+                {
+                    result.Add(tempRes + add);
+                    Output.PrintColorfulText(1, "Если верхняя цифра больше нижней," +
+                                                " то просто вычитаем верхнее из нижнего");
+                    Output.PrintColorfulText(2, $"верхняя цифра({numList1[i]}) - нижняя цифра({numList2[i]}) " +
+                                                $"= {tempRes}");
+                }
+                else
+                {
+                    tempRes = numSystem + numList1[i] - numList2[i];
+                    result.Add(tempRes + add);
+                    add--;
+                    Output.PrintColorfulText(1, "Если верхняя цифра меньше нижней, то занимаем из " +
+                                                "разряда старше единицу, складываем ее с верхним числом и вычитаем " +
+                                                "из этого нижнее число ");
+                    Output.PrintColorfulText(1, "Не забываем о занятом числе в следующей цифре");
+                    Output.PrintColorfulText(2, $"Занятый разряд({numSystem}) + верхняя цифра({numList1[i]}) - нижняя цифра({numList2[i]}) " +
+                                                $"= {tempRes}");
+                }
+            }
+
+            result.Reverse();
+
+            var strResult = GetNumInSS(result);
+            if (minus == true)
+                string.Concat("-", strResult);
+            Console.WriteLine("Результат: " + strResult);
         }
 
         public static void Multiply()

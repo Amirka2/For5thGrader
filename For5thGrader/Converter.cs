@@ -44,25 +44,26 @@ namespace For5thGrader
             Console.ForegroundColor = ConsoleColor.Green;
             Console.WriteLine("Для перевода из любой системы счисления в любую другую, нужно перевести число в десятичную систему, а потом из десятичной в нужную");
             
-            int number = FromAnyTo10(num, numSystem1); 
+            int number = FromAnyTo10(num, numSystem1, true); 
             var result = From10ToAny(number, numSystem2);
         }                                    
 
-        public static int FromAnyTo10(string num, int numSystem)
+        public static int FromAnyTo10(string num, int numSystem, bool check)
         {
             var number = ToNumList(num);
             Console.ForegroundColor = ConsoleColor.Blue;
-            Console.WriteLine("Для перевода числа из любой системы счисления в десятичную достаточно " +
-                              "пронумеровать его разряды, начиная с нулевого " +
-                              "\nТеперь найдём сумму произведений цифр числа на основание системы счисления в степени позиции этой цифры:");
+            if (check)
+                Output.FromAnyTo10Text1();
 
             var result = 0;
             for (int i = number.Count - 1, j = 0; i >= 0; i--, j++)
             {
-                Console.WriteLine($"Результат = {result} + {number[j]} * {numSystem} ^ {i} = {number[j] * (int)Math.Pow(numSystem, i)}");
+                if (check)
+                    Console.WriteLine($"Результат = {result} + {number[j]} * {numSystem} ^ {i} = {number[j] * (int)Math.Pow(numSystem, i)}");
                 result += number[j] * (int)Math.Pow(numSystem, i);
             }
-            Console.WriteLine($"Складываем \nИтог: {result}");
+            if (check)
+                Console.WriteLine($"Складываем \nИтог: {result}");
 
             return result;
         }             // 1 Task
